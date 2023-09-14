@@ -1,14 +1,21 @@
 <template>
-  <Chessboard />
+  <TheChessboard @move="onMove"/>
+  <div id="chessBoardContainer"></div>
 </template>
 
 <script>
-import { Chessboard } from "vue-chessground";
-import "vue-chessground/chessboard.css";
+import { TheChessboard } from "vue3-chessboard";
+import 'vue3-chessboard/style.css';
+
 export default {
   name: "ChessBoardDisplay",
   components: {
-    Chessboard,
+    TheChessboard,
+  },
+  methods: {
+    onMove(move) {
+      console.log("Move made:", move);
+    },
   },
 };
 </script>
