@@ -2,5 +2,16 @@
   "name": "chess-frontend-tests",
   "description": "FrontEnd Programming Challenge for Chess.com",
   "license": "MIT",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "vue": "^3.3.4",
+    "vue-chessground": "^1.1.1",
+    "vue-template-compiler": "^2.7.14"
+  }
 }
