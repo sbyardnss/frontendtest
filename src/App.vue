@@ -1,5 +1,5 @@
 <script setup>
-import ChessBoardDisplay from "./components/ChessBoardDisplay.vue";
+import ChessBoardDisplay from "./components/ChessBoardDisplay.vue"
 import SideBarComponent from "./components/SideBar.vue";
 import BlankBoardDisplay from "./components/BlankBoardDisplay.vue";
 import { ref } from "vue";
@@ -7,7 +7,7 @@ import { ref } from "vue";
 // Data properties to hold moves and squares
 const moves = ref([]);
 const squares = ref([]);
-const squaresOrMoves = ref('moves')
+const squaresOrMoves = ref('squares')
 // Event handlers for updated events
 function handleMovesUpdated(updatedMoves) {
   moves.value = updatedMoves;
@@ -110,6 +110,9 @@ function handleSquaresUpdated(updatedSquares) {
     align-self: center;
     padding: 0;
     margin: 1em;
+  }
+  #blankBoardComponent {
+    transform: rotate(180deg);
   }
   #sideBar {
     height: 40em;

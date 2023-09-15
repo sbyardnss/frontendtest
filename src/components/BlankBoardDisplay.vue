@@ -5,7 +5,9 @@ export default {
   data() {
     return {
       letters: ["h", "g", "f", "e", "d", "c", "b", "a"],
+      // letters: ['a','b','c','d','e','f','g','h'],
       numbers: [1, 2, 3, 4, 5, 6, 7, 8],
+      // numbers: [8,7,6,5,4,3,2,1],
       blackSquares: [
         "a1",
         "a3",
@@ -54,7 +56,7 @@ export default {
 };
 </script>
 <template>
-  <div class="row" v-for="n in this.numbers">
+  <div class="column" v-for="n in this.numbers">
     <div
       v-for="l in this.letters"
       :class="{
@@ -97,11 +99,25 @@ export default {
   color: red;
   cursor: pointer;
 }
-@media screen and (min-width: 0px) and (max-width: 480px) {
-  .row {
+
+@media screen and (min-width: 481px) {
+  .column {
     display: flex;
-    width: fit-content;
+    flex-wrap: wrap;
+    font-size: 3vw;
+  
+    width: 2.5em;
+    margin: 0;
+    padding: 0;
   }
+  
+}
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .column {
+    display: flex;
+    /* width: fit-content; */
+  }
+
   .whiteSquare {
     border: 0.01em solid black;
     height: 4em;
