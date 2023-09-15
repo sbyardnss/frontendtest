@@ -47,7 +47,12 @@ export default {
   methods: {
     handleSquareClicked(square) {
       this.clickedSquares.push(square);
-      this.activeSquare = square;
+      if(square === this.activeSquare) {
+        this.activeSquare = null
+      }
+      else {
+        this.activeSquare = square;
+      }
       this.$emit("squaresUpdated", this.clickedSquares)
     },
   },

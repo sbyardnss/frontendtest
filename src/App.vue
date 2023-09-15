@@ -23,10 +23,10 @@ function handleSquaresUpdated(updatedSquares) {
   <main id="mainContainer">
     <div id="buttonContainer">
       <button type="button" @click="squaresOrMoves = 'squares', moves = []">
-        squares list
+        squares
       </button>
       <button type="button" @click="squaresOrMoves = 'moves', squares = []">
-        moves list
+        moves
       </button>
     </div>
     <div id="boardsContainer">
