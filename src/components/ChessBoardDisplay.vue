@@ -19,8 +19,7 @@ export default {
   methods: {
     onMove(move) {
       this.moves.push(move);
-      this.$emit("moves-updated", this.moves); // Emit custom event with moves
-      // console.log("Move made:", move);
+      this.$emit("moves-updated", this.moves);
     },
   },
 };
@@ -28,8 +27,6 @@ export default {
 
 <style>
 #chessBoardInterface {
-  /* width: 100%; */
-  /* height: 100vh; */
   height: 100%;
   max-width: 100%;
 }

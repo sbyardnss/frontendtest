@@ -4,10 +4,8 @@ export default {
   emits: ['squaresUpdated'],
   data() {
     return {
-      letters: ["h", "g", "f", "e", "d", "c", "b", "a"],
-      // letters: ['a','b','c','d','e','f','g','h'],
-      numbers: [1, 2, 3, 4, 5, 6, 7, 8],
-      // numbers: [8,7,6,5,4,3,2,1],
+      letters: ['a','b','c','d','e','f','g','h'],
+      numbers: [8,7,6,5,4,3,2,1],
       blackSquares: [
         "a1",
         "a3",
@@ -56,9 +54,9 @@ export default {
 };
 </script>
 <template>
-  <div class="column" v-for="n in this.numbers">
+  <div class="column" v-for="l in this.letters">
     <div
-      v-for="l in this.letters"
+      v-for="n in this.numbers"
       :class="{
         blackSquare: blackSquares.includes(`${l}${n}`),
         whiteSquare: !blackSquares.includes(`${l}${n}`),
@@ -75,56 +73,39 @@ export default {
   background-color: black;
   font-size: 3vw;
   height: 2.5em;
-  width: 2.5em;
-  border: 1px solid black;
+  width: 2.4em;
   color: black;
   cursor: pointer;
 }
 .whiteSquare {
   height: 2.5em;
-  width: 2.5em;
+  width: 2.4em;
   margin: 0;
   font-size: 3vw;
-  border: 1px solid black;
   color: white;
   cursor: pointer;
 }
 .active {
   height: 2.5em;
-  width: 2.5em;
+  width: 2.4em;
   margin: 0;
   font-size: 3vw;
-  border: 1px solid black;
   background-color: red;
   color: red;
   cursor: pointer;
 }
 
-@media screen and (min-width: 481px) {
-  .column {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 3vw;
-  
-    width: 2.5em;
-    margin: 0;
-    padding: 0;
-  }
-  
-}
+
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .column {
     display: flex;
-    /* width: fit-content; */
   }
 
   .whiteSquare {
-    border: 0.01em solid black;
     height: 4em;
     width: 4em;
   }
   .blackSquare {
-    border: 0.01em solid black;
     height: 4em;
     width: 4em;
   }

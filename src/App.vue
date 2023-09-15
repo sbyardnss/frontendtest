@@ -4,18 +4,19 @@ import SideBarComponent from "./components/SideBar.vue";
 import BlankBoardDisplay from "./components/BlankBoardDisplay.vue";
 import { ref } from "vue";
 
-// Data properties to hold moves and squares
+// refs to hold moves and squares
 const moves = ref([]);
 const squares = ref([]);
+
+// ref for board selection
 const squaresOrMoves = ref('squares')
+
 // Event handlers for updated events
 function handleMovesUpdated(updatedMoves) {
   moves.value = updatedMoves;
-  // console.log(moves.value);
 }
 function handleSquaresUpdated(updatedSquares) {
   squares.value = updatedSquares;
-  // console.log(updatedSquares);
 }
 </script>
 <template>
@@ -54,6 +55,7 @@ function handleSquaresUpdated(updatedSquares) {
   align-self: center;
   width: fit-content;
   height: fit-content;
+  margin: .5em;
 }
 #boardsContainer {
   margin: 0;
@@ -87,6 +89,7 @@ function handleSquaresUpdated(updatedSquares) {
   }
   #blankBoardComponent {
     display: flex;
+    border: 1px solid black;
   }
   #sideBar {
     height: 100%;
@@ -98,7 +101,8 @@ function handleSquaresUpdated(updatedSquares) {
 }
 @media screen and (min-width: 0px) and (max-width: 480px) {
   #mainContainer {
-    justify-content: center;
+    width: 100%;
+    align-items: center;
     height: 96%;
   }
   #boardsContainer {
@@ -112,10 +116,14 @@ function handleSquaresUpdated(updatedSquares) {
     margin: 1em;
   }
   #blankBoardComponent {
-    transform: rotate(180deg);
+    transform: scaleX(-1) rotate(90deg);
+    border: 1px solid black;
+    justify-self: center;
   }
   #sideBar {
-    height: 40em;
+    position: absolute;
+    bottom: 0%;
+    height: 16em;
     width: 100%;
     margin: 0;
   }
